@@ -5,6 +5,7 @@ import PageWrapper from '../layout/pagewrapper/PageWrapper';
 import Education from '../components/sections/education/Education';
 import Services from '../components/sections/service/Services';
 import Projects from '../components/sections/projects/Projects';
+import Blogs from '../components/sections/blogs/Blogs';
 
 interface HomeProps {}
 
@@ -16,6 +17,7 @@ const Home: React.FC<HomeProps> = ({}) => {
 			<Education />
 			<Services />
 			<Projects />
+			<Blogs />
 		</PageWrapper>
 	);
 };
