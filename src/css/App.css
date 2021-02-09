@@ -183,3 +183,15 @@ a {
 }
 
 /* End Media Queries */
+
+/* TODO: */
+/* Some module styles here */
+/* education */
+#exp__sec h4 {
+	text-align: center;
+	text-transform: capitalize;
+}
+
+#exp__sec {
+	padding-bottom: 2rem;
+}

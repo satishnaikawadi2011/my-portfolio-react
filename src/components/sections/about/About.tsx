@@ -1,6 +1,6 @@
 import React from 'react';
-import AboutCard from '../about-card/AboutCard';
-import Skill from '../skill/Skill';
+import AboutCard from '../../about-card/AboutCard';
+import Skill from '../../skill/Skill';
 import styles from './about.module.css';
 
 interface AboutProps {}
