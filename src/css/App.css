@@ -31,6 +31,10 @@ html {
 	scroll-behavior: smooth;
 }
 
+button {
+	cursor: pointer;
+}
+
 body {
 	font-family: 'Cantarell', sans-serif;
 	background: var(--offWhite);

@@ -1,0 +1,30 @@
+.service {
+	padding: 2rem;
+	text-align: justify;
+	transition: var(--mainTransition);
+}
+
+.service:hover {
+	box-shadow: var(--lightShadow);
+}
+
+.service:hover .service__icon {
+	fill: var(--secondaryColor);
+}
+.service__icon {
+	width: 50px;
+	height: 50px;
+	fill: var(--darkGrey);
+	margin-bottom: 1rem;
+	transition: var(--mainTransition);
+}
+
+.service__title h2 {
+	font-size: 1.8rem;
+}
+
+@media screen and (min-width: 992px) {
+	.service {
+		margin: 0 1rem;
+	}
+}
