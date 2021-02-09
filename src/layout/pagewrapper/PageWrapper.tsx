@@ -4,7 +4,7 @@ import Header from '../header/Header';
 import styles from './pagewrapper.module.css';
 
 interface PageWrapperProps{
-
+    
 }
 
 
@@ -12,7 +12,7 @@ interface PageWrapperProps{
 const PageWrapper: React.FC<PageWrapperProps> = ({children}) => {
     return (
         <React.Fragment>
-            <Header />
+            <Header/>
             <div className={styles.content}>
                 {children}
             </div>

@@ -126,3 +126,13 @@ a {
 	height: 0.015rem;
 	margin-bottom: 0.6rem;
 }
+
+
+
+.nav__coloured{
+	background-color:var(--mainBlack);
+}
+
+.nav__transparent{
+	background-color: transparent;
+}

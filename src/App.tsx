@@ -1,16 +1,18 @@
 import React from 'react';
 import './css/App.css';
 import './css/normalize.css';
-import Footer from './layout/footer/Footer';
-import Header from './layout/header/Header';
-import PageWrapper from './layout/pagewrapper/PageWrapper';
+import {Switch,Route,BrowserRouter as Router} from 'react-router-dom'
+import Home from './pages/Home';
+
 
 function App() {
   return (
     <React.Fragment>
-      <PageWrapper>
-        <h1>Hey</h1>
-      </PageWrapper>
+      <Router>
+        <Switch>
+          <Route exact component={Home} path="/"/>
+        </Switch>
+      </Router>
     </React.Fragment>
   );
 }

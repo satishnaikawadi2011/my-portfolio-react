@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import styles from './header.module.css';
 
 interface HeaderProps{
@@ -7,17 +7,8 @@ interface HeaderProps{
 
 
 const Header: React.FC<HeaderProps> = () => {
-
-
     const navItems = useRef<HTMLDivElement | null>(null);
     const navbar = useRef<HTMLElement | null>(null);
-    const x = window.matchMedia('(min-width: 992px)');
-    useEffect(() => {
-        	if (x.matches) {
-		navbar.current!.style.height = '4rem';
-		navItems.current!.style.display = 'flex';
-	}
-    }, [x.matches,navItems,navbar])
     
     const navToggleHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         		if (navItems.current!.style.display !== 'none') {
