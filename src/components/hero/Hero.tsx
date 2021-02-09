@@ -1,12 +1,20 @@
 import React from 'react';
 import styles from './hero.module.css';
 
-interface HeroProps {}
+interface HeroProps {
+	path?: string;
+}
 
-const Hero: React.FC<HeroProps> = ({}) => {
+const Hero: React.FC<HeroProps> = ({ path }) => {
 	return (
 		<React.Fragment>
-			<div className={styles.hero__bg} />
+			<div
+				className={
+
+						path === '/' ? `${styles.hero__bg__home}` :
+						`${styles.hero__bg__about}`
+				}
+			/>
 			<main className={styles.hero}>
 				<div className={styles.hero__image__container}>
 					<img className={styles.hero__image} src="images/hero-1.jpg" alt="Satish Naikawadi" />

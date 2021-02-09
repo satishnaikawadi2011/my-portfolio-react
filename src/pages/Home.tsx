@@ -13,7 +13,7 @@ interface HomeProps {}
 const Home: React.FC<HomeProps> = ({}) => {
 	return (
 		<PageWrapper>
-			<Hero />
+			<Hero path="/" />
 			<About />
 			<Education />
 			<Services />
