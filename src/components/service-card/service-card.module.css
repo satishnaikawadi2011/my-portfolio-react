@@ -23,8 +23,14 @@
 	font-size: 1.8rem;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
 	.service {
-		margin: 0 1rem;
+		flex: 0 0 calc(50% - 1rem);
+	}
+}
+
+@media screen and (min-width: 1050px) {
+	.service {
+		flex: 0 0 calc(33.33% - 2rem);
 	}
 }

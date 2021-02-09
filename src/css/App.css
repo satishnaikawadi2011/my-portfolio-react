@@ -155,6 +155,8 @@ a {
 	.section__center {
 		display: flex;
 		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 	.right__half {
 		width: 45%;
