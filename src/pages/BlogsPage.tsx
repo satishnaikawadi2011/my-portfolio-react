@@ -6,7 +6,7 @@ import BlogCard from '../components/blog-card/BlogCard';
 const BlogsPage: React.FC<{}> = ({}) => {
 	return (
 		<div>
-			<PageWrapper>
+			<PageWrapper title="Blog Articles">
 				<div className="section__title" style={{ marginTop: '6rem' }}>
 					<h1>latest articles</h1>
 				</div>

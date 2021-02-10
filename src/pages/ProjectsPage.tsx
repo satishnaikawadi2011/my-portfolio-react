@@ -5,7 +5,7 @@ import PageWrapper from '../layout/pagewrapper/PageWrapper';
 const ProjectsPage: React.FC<{}> = ({}) => {
 	return (
 		<div>
-			<PageWrapper>
+			<PageWrapper title="My Projects">
 				<div className="section__title" style={{ marginTop: '6rem' }}>
 					<h1>featured projects</h1>
 				</div>

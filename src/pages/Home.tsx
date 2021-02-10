@@ -12,7 +12,7 @@ interface HomeProps {}
 
 const Home: React.FC<HomeProps> = ({}) => {
 	return (
-		<PageWrapper>
+		<PageWrapper title="Satish Naikawadi - Developer">
 			<Hero path="/" />
 			<About />
 			<Education />
