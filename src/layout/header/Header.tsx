@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import styles from './header.module.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 interface HeaderProps {}
 
@@ -28,30 +28,30 @@ const Header: React.FC<HeaderProps> = () => {
 					</Link>
 				</span>
 				<div ref={navItems} className={styles.nav__items} id="nav-items">
-					<Link to="/" className={styles.nav__link}>
+					<NavLink exact activeClassName={styles.active__link} to="/" className={styles.nav__link}>
 						{' '}
 						<svg className={styles.nav__link__icon}>
 							<use href="images/sprite.svg#icon-home" />
 						</svg>Home
-					</Link>
+					</NavLink>
 					<div className={styles.divider} />
-					<Link to="/about" className={styles.nav__link}>
+					<NavLink activeClassName={styles.active__link} to="/about" className={styles.nav__link}>
 						<svg className={styles.nav__link__icon}>
 							<use href="images/sprite.svg#icon-info" />
 						</svg>About
-					</Link>
+					</NavLink>
 					<div className={styles.divider} />
-					<Link to="projects" className={styles.nav__link}>
+					<NavLink activeClassName={styles.active__link} to="/projects" className={styles.nav__link}>
 						<svg className={styles.nav__link__icon}>
 							<use href="images/sprite.svg#icon-files-empty" />
 						</svg>Projects
-					</Link>
+					</NavLink>
 					<div className={styles.divider} />
-					<Link to="/contact" className={styles.nav__link}>
+					<NavLink activeClassName={styles.active__link} to="/contact" className={styles.nav__link}>
 						<svg className={styles.nav__link__icon}>
 							<use href="images/sprite.svg#icon-phone" />
 						</svg>Contact
-					</Link>
+					</NavLink>
 				</div>
 				<div id="menu__icon__container" onClick={navToggleHandler}>
 					<svg className={styles.nav__menu__icon} id="menu">
