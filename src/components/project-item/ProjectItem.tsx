@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './project-item.module.css';
-
+import { motion } from 'framer-motion';
+import { cardVariant } from '../../utils/variants';
 interface ProjectItemProps {
 	image: string;
 	title: string;
@@ -9,7 +10,7 @@ interface ProjectItemProps {
 
 const ProjectItem: React.FC<ProjectItemProps> = ({ image, title, category }) => {
 	return (
-		<div className={styles.project}>
+		<motion.div variants={cardVariant} initial="hidden" animate="visible" className={styles.project}>
 			<div className={styles.project__img__container}>
 				<img src={`images/${image}.jpg`} alt={title} className={styles.project__image} />
 				<svg className={styles.project__icon}>
@@ -18,7 +19,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ image, title, category }) => 
 			</div>
 			<h2 className={styles.project__title}>{title}</h2>
 			<p className={styles.project__category}>{category}</p>
-		</div>
+		</motion.div>
 	);
 };
 

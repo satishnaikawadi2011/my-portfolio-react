@@ -21,7 +21,7 @@ const pageVariant = {
 	exit:
 		{
 			x: '-100vw',
-			transition: { eaase: 'easeInOut' }
+			transition: { eaase: 'easeInOut', when: 'beforeChildren' }
 		}
 };
 

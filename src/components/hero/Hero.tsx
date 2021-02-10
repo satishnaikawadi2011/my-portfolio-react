@@ -1,6 +1,21 @@
 import React from 'react';
 import HeroListItem from '../hero-list-item/HeroListItem';
 import styles from './hero.module.css';
+import { motion } from 'framer-motion';
+
+const heroVariant = {
+	visible:
+		{
+			opacity: 1,
+			y: 0,
+			transition: { delay: 0.2, duration: 0.4, type: 'spring', stiffness: 100 }
+		},
+	hidden:
+		{
+			opacity: 0,
+			y: '-100vh'
+		}
+};
 
 interface HeroProps {
 	path?: string;
@@ -16,7 +31,7 @@ const Hero: React.FC<HeroProps> = ({ path }) => {
 						`${styles.hero__bg__about}`
 				}
 			/>
-			<main className={styles.hero}>
+			<motion.main className={styles.hero} initial="hidden" animate="visible" variants={heroVariant}>
 				<div className={styles.hero__image__container}>
 					<img className={styles.hero__image} src="images/hero-1.jpg" alt="Satish Naikawadi" />
 				</div>
@@ -51,7 +66,7 @@ const Hero: React.FC<HeroProps> = ({ path }) => {
 						</svg>
 					</div>
 				</div>
-			</main>
+			</motion.main>
 		</React.Fragment>
 	);
 };

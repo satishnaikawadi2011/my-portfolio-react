@@ -2,6 +2,8 @@ import React from 'react';
 import PageWrapper from '../layout/pagewrapper/PageWrapper';
 import styles from '../components/sections/blogs/blogs.module.css';
 import BlogCard from '../components/blog-card/BlogCard';
+import { motion } from 'framer-motion';
+import { cardContainerVariant } from '../utils/variants';
 
 const BlogsPage: React.FC<{}> = ({}) => {
 	return (
@@ -10,7 +12,12 @@ const BlogsPage: React.FC<{}> = ({}) => {
 				<div className="section__title" style={{ marginTop: '6rem' }}>
 					<h1>latest articles</h1>
 				</div>
-				<div className={`section__center ${styles.blogs__section}`}>
+				<motion.div
+					className={`section__center ${styles.blogs__section}`}
+					variants={cardContainerVariant}
+					initial="hidden"
+					animate="visible"
+				>
 					<BlogCard
 						createdAt="May 25th, 2021"
 						image="blog-1"
@@ -62,7 +69,7 @@ const BlogsPage: React.FC<{}> = ({}) => {
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, ipsam nulla a cum quia quam nam
 						aut quod, blanditiis rerum sint reprehenderit sequi totam quasi?
 					</BlogCard>
-				</div>
+				</motion.div>
 			</PageWrapper>
 		</div>
 	);

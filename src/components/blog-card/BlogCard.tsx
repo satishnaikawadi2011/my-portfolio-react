@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import React from 'react';
+import { cardVariant } from '../../utils/variants';
 import styles from './blog-card.module.css';
 
 interface BlogCardProps {
@@ -10,7 +12,7 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ image, title, tags, createdAt, children }) => {
 	return (
-		<div className={styles.blog__card}>
+		<motion.div variants={cardVariant} initial="hidden" animate="visible" className={styles.blog__card}>
 			<div className={styles.blog__img__container}>
 				<img src={`images/${image}.jpg`} alt={title} className={styles.blog__image} />
 				<span className={styles.blog__createdAt__badge}>{createdAt}</span>
@@ -24,7 +26,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, title, tags, createdAt, chil
 					})}
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
