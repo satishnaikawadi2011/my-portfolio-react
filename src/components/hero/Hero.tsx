@@ -1,4 +1,5 @@
 import React from 'react';
+import HeroListItem from '../hero-list-item/HeroListItem';
 import styles from './hero.module.css';
 
 interface HeroProps {
@@ -30,30 +31,10 @@ const Hero: React.FC<HeroProps> = ({ path }) => {
 						nobis reiciendis nisi at placeat odit exercitationem.
 					</p>
 					<ul className={styles.hero__list}>
-						<li className={styles.hero__list__item}>
-							<svg className={styles.hero__list__item__icon}>
-								<use href="images/sprite.svg#icon-calendar" />
-							</svg>
-							<span> 16th january, 2001 </span>
-						</li>
-						<li className={styles.hero__list__item}>
-							<svg className={styles.hero__list__item__icon}>
-								<use href="images/sprite.svg#icon-envelop" />
-							</svg>
-							<span>satishnaikawadi2001@gmail.com</span>
-						</li>
-						<li className={styles.hero__list__item}>
-							<svg className={styles.hero__list__item__icon}>
-								<use href="images/sprite.svg#icon-phone" />
-							</svg>
-							<span>8975179022 , 9324636618</span>
-						</li>
-						<li className={styles.hero__list__item}>
-							<svg className={styles.hero__list__item__icon}>
-								<use href="images/sprite.svg#icon-home" />
-							</svg>
-							<span>Charan , maharashtra ,india</span>
-						</li>
+						<HeroListItem icon="calendar" title="16th january, 2001" />
+						<HeroListItem icon="envelop" title="satishnaikawadi2001@gmail.com" />
+						<HeroListItem icon="phone" title="8975179022 , 9324636618" />
+						<HeroListItem icon="home" title="Charan , maharashtra ,india" />
 					</ul>
 					<div className={styles.social__icons}>
 						<svg className={styles.social__icon}>
