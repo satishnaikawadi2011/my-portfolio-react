@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ProjectItem from '../../project-item/ProjectItem';
 import styles from './projects.module.css';
 
@@ -14,9 +15,9 @@ const Projects = () => {
 				<ProjectItem category="web development" image="project-3" title="Realtime Chatting Web App" />
 			</div>
 			<div className={styles.btn__container}>
-				<button className="mainBtn" type="button">
-					load more items
-				</button>
+				<Link to="/projects" className="mainBtn" type="button">
+					more projects
+				</Link>
 			</div>
 		</section>
 	);

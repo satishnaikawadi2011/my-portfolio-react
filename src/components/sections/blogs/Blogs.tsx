@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BlogCard from '../../blog-card/BlogCard';
 import styles from './blogs.module.css';
 
@@ -49,9 +50,9 @@ const Blogs = () => {
 				</BlogCard>
 			</div>
 			<div className={styles.btn__container}>
-				<button className="mainBtn" type="button">
+				<Link to="/blogs" className="mainBtn" type="button">
 					blog
-				</button>
+				</Link>
 			</div>
 		</section>
 	);
