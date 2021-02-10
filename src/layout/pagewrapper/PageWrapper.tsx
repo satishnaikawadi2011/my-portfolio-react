@@ -11,19 +11,23 @@ interface PageWrapperProps {
 const pageVariant = {
 	visible:
 		{
-			width: '100vw',
-			opacity: 1
+			opacity: 1,
+			transition: { delay: 0.2, duration: 0.2 }
 		},
 	hidden:
 		{
-			width: 0,
 			opacity: 0
+		},
+	exit:
+		{
+			x: '-100vw',
+			transition: { eaase: 'easeInOut' }
 		}
 };
 
 const PageWrapper: React.FC<PageWrapperProps> = ({ children, title }) => {
 	return (
-		<motion.div variants={pageVariant} initial="hidden" animate="visible" exit={{ opacity: 0 }}>
+		<motion.div variants={pageVariant} initial="hidden" animate="visible" exit="exit">
 			<Helmet>
 				<title>{title}</title>
 			</Helmet>
