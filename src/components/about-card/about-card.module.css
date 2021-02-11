@@ -1,3 +1,11 @@
+.about__card {
+	widows: 90%;
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+	margin-bottom: 3rem;
+	padding: 1rem;
+	background-color: var(--bgCard);
+}
+
 .about__card__icon {
 	width: 25px;
 	height: 25px;
@@ -8,11 +16,12 @@
 	font-weight: bold;
 	font-size: 3rem;
 	margin-bottom: -0.5rem;
+	color: var(--secondaryText);
 }
 
 .about__card__title {
 	text-transform: uppercase;
-	color: var(--darkGrey);
+	color: var(--primaryText);
 }
 
 @media screen and (min-width: 768px) {
@@ -27,11 +36,4 @@
 	.about__card {
 		margin: 0 0.2rem;
 	}
-}
-
-.about__card {
-	widows: 90%;
-	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
-	margin-bottom: 3rem;
-	padding: 1rem;
 }

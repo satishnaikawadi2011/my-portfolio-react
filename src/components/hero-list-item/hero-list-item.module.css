@@ -6,6 +6,7 @@
 
 .hero__list__item span {
 	text-transform: capitalize;
+	color: var(--primaryText);
 }
 
 .hero__list__item__icon {
@@ -23,6 +24,6 @@
 .hero__list__item p {
 	margin-bottom: 0;
 	font-size: 0.8rem;
-	color: darkgray;
+	color: var(--secondaryText);
 	display: block;
 }

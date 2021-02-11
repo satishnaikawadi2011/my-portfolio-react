@@ -10,12 +10,43 @@
 	--mainGrey: #e8e8e8;
 	--darkGrey: #a9a9a9;
 	--mainWhite: #fff;
-	--offWhite: #f5f5f5;
 	--mainBlack: #222;
+	--fontColor: var(--mainBlack);
+	--offWhite: #f5f5f5;
 	--mainTransition: all 0.5s linear;
 	--mainSpacing: 0.25rem;
 	--lightShadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
 	--darkShadow: 6px 7px 9px 0px rgba(0, 0, 0, 0.75);
+
+	--bgColor: #f2fcff;
+	--bgCard: #e6faff;
+	--bgHover: #bff2ff;
+	--primaryText: #222;
+	--secondaryText: #a9a9a9;
+
+	--timelineSecondaryText: var(--primaryText);
+}
+
+[data-theme="dark"] {
+	--primaryColor: #00c9ff;
+	--secondaryColor: #92fe9d;
+	--mainGradient: linear-gradient(315deg, #380036 0%, #0cbaba 74%);
+	--reverseGradient: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+	--mainGrey: #e8e8e8;
+	--darkGrey: #a9a9a9;
+	--mainWhite: #fff;
+	--offWhite: #f5f5f5;
+	--mainBlack: #222;
+	--mainTransition: all 0.5s linear;
+	--mainSpacing: 0.25rem;
+
+	--bgColor: #15202b;
+	--bgCard: #192734;
+	--bgHover: #22303c;
+	--primaryText: #ffffff;
+	--secondaryText: #8899a6;
+
+	--timelineSecondaryText: var(--secondaryText);
 }
 
 /* Resets */
@@ -37,8 +68,8 @@ button {
 
 body {
 	font-family: 'Cantarell', sans-serif;
-	background: var(--offWhite);
-	color: var(--mainBlack);
+	background: var(--bgColor);
+	color: var(--primaryText);
 	line-height: 1.5;
 	font-size: 1rem;
 	overflow-x: hidden;
@@ -86,6 +117,7 @@ p {
 	margin-bottom: 1.25rem;
 	line-height: 2;
 	font-weight: 300;
+	color: var(--secondaryText);
 }
 
 a {
@@ -101,6 +133,7 @@ a {
 	text-transform: capitalize;
 	background-image: var(--mainGradient);
 	transition: var(--mainTransition);
+	color: var(--primaryText);
 	outline: 0;
 	border: none;
 	border-radius: 10px;
@@ -127,14 +160,6 @@ a {
 	background-color: var(--darkGrey);
 	height: 0.015rem;
 	margin-bottom: 0.6rem;
-}
-
-.nav__coloured {
-	background-color: var(--mainBlack);
-}
-
-.nav__transparent {
-	background-color: transparent;
 }
 
 /* Projects Page */
@@ -201,6 +226,7 @@ a {
 	.about__card {
 		text-align: center;
 		flex: 0 0 calc(33.333%-2rem);
+		background-color: var(--bgCard);
 	}
 }
 
@@ -215,6 +241,7 @@ a {
 	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 	margin-bottom: 3rem;
 	padding: 1rem;
+	background-color: var(--bgCard);
 }
 
 /* End Media Queries */

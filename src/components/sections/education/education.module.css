@@ -15,7 +15,7 @@
 	background: var(--mainGradient);
 	padding: 0.5rem 1rem;
 	border: 0.1px solid var(--primaryColor);
-	color: var(--mainBlack);
+	color: var(--primaryText);
 	font-weight: bold;
 	transition: all 0.3s linear;
 	margin: 0 1rem;
@@ -28,6 +28,7 @@ btn:focus {
 
 .btn--white {
 	background: var(--mainWhite);
+	color: var(--mainBlack);
 }
 
 .buttons {

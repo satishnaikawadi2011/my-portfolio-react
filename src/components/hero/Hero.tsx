@@ -45,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({ path }) => {
 					<p className={styles.hero__text}>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem laborum facere beatae esse
 						nobis reiciendis nisi at placeat odit exercitationem.
-					</p>s
+					</p>
 					<ul className={styles.hero__list}>
 						<HeroListItem icon="calendar" title="16th january, 2001" />
 						<HeroListItem icon="envelop" title="satishnaikawadi2001@gmail.com" />

@@ -1,5 +1,5 @@
 .page__content {
-	background-color: var(--mainGrey);
+	background-color: var(--bgCard);
 	padding: 2rem;
 }
 
@@ -14,6 +14,8 @@
 	width: 100%;
 	border: none;
 	border-bottom: 2px solid var(--primaryColor);
+	background-color: var(--bgColor);
+	color: var(--primaryText);
 }
 
 .form__control:focus {

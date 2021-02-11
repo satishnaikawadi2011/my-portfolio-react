@@ -6,7 +6,7 @@
 }
 
 .footer p {
-	color: var(--darkGrey);
+	color: var(--secondaryText);
 	font-size: 0.85rem;
 }
 

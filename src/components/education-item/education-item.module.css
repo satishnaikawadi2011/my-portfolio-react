@@ -1,16 +1,19 @@
 .timeline {
 	text-transform: capitalize;
 	margin-bottom: 0;
+	color: var(--primaryText);
 }
 
 .timeline__title {
 	text-transform: uppercase;
 	margin: 0.7rem 0;
 	font-size: 1.7rem;
+	color: var(--primaryText);
 }
 
 .timeline__info {
 	text-transform: capitalize;
+	color: var(--timelineSecondaryText);
 }
 
 .education__item {

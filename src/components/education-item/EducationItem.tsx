@@ -21,7 +21,7 @@ const EducationItem: React.FC<EducationItemProps> = ({ timePeriod, title, subtit
 						{info}
 					</p>
 				</div>
-			</div>s
+			</div>
 		</Rosa>
 	);
 };

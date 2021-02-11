@@ -46,6 +46,7 @@
 	font-size: 1.5rem;
 	margin: 1rem 0 0.5rem 0;
 	text-transform: capitalize;
+	color: var(--primaryText);
 	transition: var(--mainTransition);
 }
 
@@ -55,7 +56,7 @@
 
 .project__category {
 	margin-top: 0.5rem;
-	color: var(--darkGrey);
+	color: var(--secondaryText);
 	text-transform: capitalize;
 }
 
