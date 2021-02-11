@@ -6500,6 +6500,11 @@
     "has" "^1.0.3"
     "side-channel" "^1.0.2"
 
+"intersection-observer@^0.11.0":
+  "integrity" "sha512-KZArj2QVnmdud9zTpKf279m2bbGfG+4/kn16UU0NL3pTVl52ZHiJ9IRNSsnn6jaHrL9EGLFM5eWjTx2fz/+zoQ=="
+  "resolved" "https://registry.npmjs.org/intersection-observer/-/intersection-observer-0.11.0.tgz"
+  "version" "0.11.0"
+
 "ip-regex@^2.1.0":
   "integrity" "sha1-+ni/XS5pE8kRzp+BnuUUa7bYROk="
   "resolved" "https://registry.yarnpkg.com/ip-regex/-/ip-regex-2.1.0.tgz"
@@ -9951,6 +9956,14 @@
   "integrity" "sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA=="
   "resolved" "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz"
   "version" "17.0.1"
+
+"react-on-scroll-animation@^1.0.0":
+  "integrity" "sha512-TBzXe3lIi7BvQzQR+SfOLuOIIyzTZb73DNA4FoMgOHilcSnvxEaihVrwLOCp+vBa1Lo4oOhtca1dDO69yerNCA=="
+  "resolved" "https://registry.npmjs.org/react-on-scroll-animation/-/react-on-scroll-animation-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "intersection-observer" "^0.11.0"
+    "lodash" "^4.17.15"
 
 "react-refresh@^0.8.3", "react-refresh@>=0.8.3 <0.10.0":
   "integrity" "sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg=="
