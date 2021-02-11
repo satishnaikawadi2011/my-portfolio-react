@@ -9,7 +9,7 @@ const Header: React.FC<HeaderProps> = () => {
 	const navbar = useRef<HTMLElement | null>(null);
 
 	const navToggleHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-		if (navItems.current!.style.display !== 'none') {
+		if (navItems.current!.style.display === 'flex') {
 			navItems.current!.style.display = 'none';
 			navbar.current!.style.height = '4rem';
 		}
