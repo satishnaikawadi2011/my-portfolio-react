@@ -1,6 +1,7 @@
 import React from 'react';
 import './css/normalize.css';
 import './css/App.css';
+import 'react-on-scroll-animation/build/index.css';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
