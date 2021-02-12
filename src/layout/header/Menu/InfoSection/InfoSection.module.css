@@ -8,6 +8,24 @@
 	background-color: #15202b;
 }
 
+.social__icons {
+	display: none;
+}
+
+.logo {
+	display: none;
+}
+
+@media only screen and (min-width: 768px) {
+	.social__icons {
+		display: block;
+	}
+
+	.logo {
+		display: block;
+	}
+}
+
 @media screen and (min-width: 1024px) {
 	.hero__section {
 		width: 50%;
