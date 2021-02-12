@@ -134,11 +134,3 @@
 		background-color: var(--mainBlack);
 	}
 }
-
-.nav__coloured {
-	background-color: black;
-}
-
-.nav__transparent {
-	background-color: transparent;
-}

@@ -1,0 +1,13 @@
+.tiles__section {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 60vh;
+}
+
+@media screen and (min-width: 1024px) {
+	.tiles__section {
+		width: 50%;
+		height: 100%;
+	}
+}
