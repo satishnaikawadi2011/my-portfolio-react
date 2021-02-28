@@ -38,6 +38,7 @@
 .hero__title h2 {
 	font-size: 1.5rem;
 	font-weight: bold;
+	color: var(--secondaryColor);
 }
 
 .hero__list__item {
@@ -112,6 +113,7 @@
 		background: var(--mainGradient);
 		width: 100vw;
 		top: 0;
+		left: 0;
 		height: 110rem;
 		position: absolute;
 		z-index: -1;

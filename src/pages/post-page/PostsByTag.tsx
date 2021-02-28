@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import PageWrapper from '../layout/pagewrapper/PageWrapper';
-import styles from '../components/sections/blogs/blogs.module.css';
-import BlogCard from '../components/blog-card/BlogCard';
+import PageWrapper from '../../layout/pagewrapper/PageWrapper';
+import styles from '../../components/sections/blogs/blogs.module.css';
+import BlogCard from '../../components/blog-card/BlogCard';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import axios from 'axios';
 
 import { motion } from 'framer-motion';
-import { cardContainerVariant } from '../utils/variants';
-import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
-import formate from '../utils/formateDate';
+import { cardContainerVariant } from '../../utils/variants';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import formate from '../../utils/formateDate';
+import { useParams } from 'react-router-dom';
 import readingTime from 'reading-time';
 
-const BlogsPage: React.FC<{}> = ({}) => {
+const PostsByTag: React.FC<{}> = ({}) => {
+	const params: { tag: string } = useParams();
 	const [
 		posts,
 		setPosts
@@ -27,7 +29,7 @@ const BlogsPage: React.FC<{}> = ({}) => {
 	const fetchMoreData = async () => {
 		let numOfPosts = 6;
 		const { data } = await axios.get(
-			`https://saty-strapi-demo.herokuapp.com/posts?_sort=createdAt:DESC&_limit=${numOfPosts}`
+			`https://saty-strapi-demo.herokuapp.com/posts?tags.name_in=${params.tag}&_sort=createdAt:DESC&_limit=${numOfPosts}`
 		);
 		numOfPosts += 3;
 		setPosts(
@@ -44,11 +46,13 @@ const BlogsPage: React.FC<{}> = ({}) => {
 		const fetchPosts = async () => {
 			setLoading(true);
 			const { data } = await axios.get(
-				'https://saty-strapi-demo.herokuapp.com/posts?_sort=createdAt:DESC&_limit=3'
+				`https://saty-strapi-demo.herokuapp.com/posts?tags.name_in=${params.tag}&_sort=createdAt:DESC&_limit=3`
 			);
 
-			const { data: count } = await axios.get('https://saty-strapi-demo.herokuapp.com/posts/count');
-			setPostCount(count);
+			const { data: countData } = await axios.get(
+				`https://saty-strapi-demo.herokuapp.com/posts?tags.name_in=${params.tag}`
+			);
+			setPostCount(countData.length);
 			setPosts(
 				data.map((post: any) => {
 					return {
@@ -78,6 +82,16 @@ const BlogsPage: React.FC<{}> = ({}) => {
 							}
 							next={fetchMoreData}
 						>
+							<h3
+								style={{
+									width: '100vw',
+									textAlign: 'center',
+									marginBottom: '2rem',
+									color: 'var(--secondaryColor)'
+								}}
+							>
+								#{params.tag}
+							</h3>
 							{posts.map((post: any) => {
 								return (
 									<BlogCard
@@ -100,4 +114,4 @@ const BlogsPage: React.FC<{}> = ({}) => {
 	);
 };
 
-export default BlogsPage;
+export default PostsByTag;

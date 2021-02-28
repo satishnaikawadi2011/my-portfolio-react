@@ -8,6 +8,9 @@ import Switch from 'react-switch';
 
 interface PageWrapperProps {
 	title: string;
+	isLandingPage?: boolean;
+	style?: React.CSSProperties | undefined;
+	className?: string | undefined;
 }
 
 const pageVariant = {
@@ -27,7 +30,7 @@ const pageVariant = {
 		}
 };
 
-const PageWrapper: React.FC<PageWrapperProps> = ({ children, title }) => {
+const PageWrapper: React.FC<PageWrapperProps> = ({ children, title, isLandingPage = false, style = {}, className }) => {
 	const [
 		darkMode,
 		setDarkMode
@@ -49,10 +52,15 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ children, title }) => {
 				<title>{title}</title>
 			</Helmet>
 			<Header />
-			<div className={styles.content}>
+			<div className={`${styles.content} ${className}`} style={{ ...style }}>
 				<div className={styles.themeToggleContainer}>
 					<Switch onChange={handleChangeTheme} checked={darkMode} />
 				</div>
+				{!isLandingPage && (
+					<div className={styles.page__title}>
+						<h1>{title}</h1>
+					</div>
+				)}
 				{children}
 			</div>
 			<Footer />

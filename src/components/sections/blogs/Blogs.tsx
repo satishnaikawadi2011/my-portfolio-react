@@ -1,59 +1,89 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import BlogCard from '../../blog-card/BlogCard';
 import styles from './blogs.module.css';
+import axios from 'axios';
+import LoadingSpinner from '../../LoadingSpinner/LoadingSpinner';
+import formate from '../../../utils/formateDate';
+import readingTime from 'reading-time';
 
 const Blogs = () => {
+	const [
+		loading,
+		setLoading
+	] = useState(false);
+	const [
+		posts,
+		setPosts
+	] = useState<any>([]);
+	const transformPosts = (postsIn: any) => {
+		let transformedPosts: any = [];
+		postsIn.forEach((post: any) => {
+			const transformedPost = {
+				id: post.id,
+				image: post.cover.formats.thumbnail.url,
+				title: post.title,
+				createdAt: formate(post.createdAt),
+				description: post.description,
+				tags: post.tags.map((tag: any) => tag.name),
+				readingTime: readingTime(post.content).text
+			};
+			transformedPosts = [
+				...transformedPosts,
+				transformedPost
+			];
+		});
+		setPosts([
+			...transformedPosts
+		]);
+	};
+
+	useEffect(() => {
+		const fetchPosts = async () => {
+			setLoading(true);
+			const { data } = await axios.get(
+				'https://saty-strapi-demo.herokuapp.com/posts?_sort=createdAt:DESC&_limit=3'
+			);
+			setLoading(false);
+			transformPosts(data);
+			console.log(posts);
+		};
+		fetchPosts();
+	}, []);
+
 	return (
 		<section className="blogs section">
 			<div className="section__title">
 				<h1>blog articles</h1>
 			</div>
-			<div className={`section__center ${styles.blogs__section}`}>
-				<BlogCard
-					createdAt="May 25th, 2021"
-					image="blog-1"
-					title="Javascript Tricky Parts"
-					tags={[
-						'javascript'
-					]}
-				>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, ipsam nulla a cum quia quam nam aut
-					quod, blanditiis rerum sint reprehenderit sequi totam quasi?
-				</BlogCard>
-				<BlogCard
-					createdAt="March 18th, 2021"
-					image="blog-2"
-					title="NextJS - next big thing"
-					tags={[
-						'react',
-						'server-side-rendering',
-						'static sites',
-						'node JS'
-					]}
-				>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, ipsam nulla a cum quia quam nam aut
-					quod, blanditiis rerum sint reprehenderit sequi totam quasi?
-				</BlogCard>
-				<BlogCard
-					createdAt="April 6th, 2021"
-					image="blog-3"
-					title="SVG animations"
-					tags={[
-						'SVG',
-						'CSS',
-						'animations'
-					]}
-				>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, ipsam nulla a cum quia quam nam aut
-					quod, blanditiis rerum sint reprehenderit sequi totam quasi?
-				</BlogCard>
-			</div>
-			<div className={styles.btn__container}>
-				<Link to="/blogs" className="mainBtn" type="button">
-					blog
-				</Link>
-			</div>
+			{
+				loading ? <LoadingSpinner /> :
+				<React.Fragment>
+					<div className={`section__center ${styles.blogs__section}`}>
+						{posts.map((post: any) => {
+							return (
+								<BlogCard
+									readingTime={post.readingTime}
+									id={post.id}
+									createdAt={post.createdAt}
+									image={post.image}
+									title={post.title}
+									tags={[
+										...post.tags
+									]}
+									key={post.title}
+								>
+									{post.description}
+								</BlogCard>
+							);
+						})}
+					</div>
+					<div className={styles.btn__container}>
+						<Link to="/blogs" className="mainBtn" type="button">
+							blog
+						</Link>
+					</div>
+				</React.Fragment>}
 		</section>
 	);
 };

@@ -6,9 +6,6 @@ import styles from './contact-page.module.css';
 const ContactPage: React.FC<{}> = ({}) => {
 	return (
 		<PageWrapper title="Contact Me">
-			<div className="section__title" style={{ marginTop: '6rem' }}>
-				<h1>contact me</h1>
-			</div>
 			<div className={styles.page__content}>
 				<ul className={styles.hero__list}>
 					<HeroListItem

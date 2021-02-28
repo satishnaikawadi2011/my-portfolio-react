@@ -6,9 +6,6 @@ import PageWrapper from '../layout/pagewrapper/PageWrapper';
 const AboutPage: React.FC<{}> = ({}) => {
 	return (
 		<PageWrapper title="About Me">
-			<div className="section__title" style={{ marginTop: '6rem' }}>
-				<h1>about me</h1>
-			</div>
 			<Hero />
 			<About />
 		</PageWrapper>

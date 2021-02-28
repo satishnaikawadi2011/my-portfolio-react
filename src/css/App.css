@@ -25,6 +25,7 @@
 	--secondaryText: #a9a9a9;
 
 	--timelineSecondaryText: var(--primaryText);
+	--mdTextShadow: 3px 3px 2px black;
 }
 
 [data-theme="dark"] {
@@ -148,6 +149,7 @@ a {
 	text-transform: uppercase;
 	text-align: center;
 	letter-spacing: var(--mainSpacing);
+	color: var(--primaryColor);
 }
 
 .section__center {

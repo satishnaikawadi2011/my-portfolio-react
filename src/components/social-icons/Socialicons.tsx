@@ -1,25 +1,38 @@
 import React from 'react';
 import styles from './social-icons.module.css';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
 interface SocialIconsProps {
 	color?: string;
 }
 
-const Socialicons: React.FC<SocialIconsProps> = ({ color }) => {
+const Socialicons: React.FC<SocialIconsProps> = ({ color = 'var(--primaryText)' }) => {
 	return (
 		<div className={styles.social__icons}>
-			<svg className={styles.social__icon} style={{ fill: color }}>
-				<use href="images/sprite.svg#icon-facebook" />
-			</svg>
-			<svg className={styles.social__icon} style={{ fill: color }}>
-				<use href="images/sprite.svg#icon-instagram" />
-			</svg>
-			<svg className={styles.social__icon} style={{ fill: color }}>
-				<use href="images/sprite.svg#icon-twitter" />
-			</svg>
-			<svg className={styles.social__icon} style={{ fill: color }}>
-				<use href="images/sprite.svg#icon-linkedin2" />
-			</svg>
+			<FaFacebookF
+				className={styles.social__icon}
+				style={{ fill: color, border: `3px solid ${color}` }}
+				fill={color}
+				color={color}
+			/>
+			<FaInstagram
+				className={styles.social__icon}
+				style={{ fill: color, border: `3px solid ${color}` }}
+				fill={color}
+				color={color}
+			/>
+			<FaLinkedinIn
+				className={styles.social__icon}
+				style={{ fill: color, border: `3px solid ${color}` }}
+				fill={color}
+				color={color}
+			/>
+			<FaTwitter
+				className={styles.social__icon}
+				style={{ fill: color, border: `3px solid ${color}` }}
+				fill={color}
+				color={color}
+			/>
 		</div>
 	);
 };

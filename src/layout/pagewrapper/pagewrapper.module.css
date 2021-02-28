@@ -3,9 +3,25 @@
 	min-height: calc(100vh - 23rem - 4rem);
 }
 
+.page__title {
+	text-transform: uppercase;
+	text-align: center;
+	color: var(--primaryColor);
+	margin-top: 6rem;
+}
+
+.page__title h1 {
+	font-size: 2.5rem;
+}
+
 @media screen and (min-width: 768px) {
 	.content {
 		min-height: calc(100vh - 15rem - 4rem);
+	}
+
+	.page__title h1 {
+		letter-spacing: 0.5rem;
+		font-size: 4.5rem;
 	}
 }
 
@@ -20,5 +36,5 @@
 	position: fixed;
 	top: 80px;
 	right: 20px;
-	z-index: 3;
+	z-index: 1;
 }
