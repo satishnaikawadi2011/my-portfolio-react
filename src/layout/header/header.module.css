@@ -31,6 +31,21 @@
 	cursor: pointer;
 }
 
+.logo__header {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	margin-top: -1.3rem;
+	height: 50px;
+	width: 50px;
+}
+
+.logo__header h2 {
+	margin-left: 1rem;
+}
+
 #cross {
 	opacity: 0;
 }
@@ -126,6 +141,12 @@
 
 	.nav__items .divider {
 		display: none;
+	}
+
+	.logo {
+		margin-top: 0;
+		height: 60px;
+		width: 60px;
 	}
 }
 
